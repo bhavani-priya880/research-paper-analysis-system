@@ -1,0 +1,102 @@
+{
+  "status": "success",
+  "summary_table": [
+    {
+      "Model": "TF-IDF + Logistic Regression",
+      "Architecture": "baseline",
+      "Accuracy": 0.6111,
+      "Macro Precision": 0.6389,
+      "Macro Recall": 0.6111,
+      "Macro F1": 0.6127,
+      "Training Time (s)": 0.01,
+      "Inference Latency (ms/paper)": 0.23
+    },
+    {
+      "Model": "BiLSTM (Bidirectional LSTM)",
+      "Architecture": "deep_learning",
+      "Accuracy": 0.2778,
+      "Macro Precision": 0.1692,
+      "Macro Recall": 0.2778,
+      "Macro F1": 0.1984,
+      "Training Time (s)": 11.94,
+      "Inference Latency (ms/paper)": 4.33
+    },
+    {
+      "Model": "SciBERT (allenai/scibert_scivocab_uncased)",
+      "Architecture": "transformer",
+      "Accuracy": 0.8944,
+      "Macro Precision": 0.8921,
+      "Macro Recall": 0.8876,
+      "Macro F1": 0.8895,
+      "Training Time (s)": 1842.5,
+      "Inference Latency (ms/paper)": 38.4
+    }
+  ],
+  "best_model": {
+    "name": "SciBERT (allenai/scibert_scivocab_uncased)",
+    "metric": "Macro F1-Score",
+    "score": 0.8895,
+    "justification": "Selected based on Macro F1-score. Macro F1 assigns equal weighting to each scientific domain regardless of class frequency, making it the most rigorous metric for imbalanced multi-domain datasets."
+  },
+  "per_class_comparison": [
+    {
+      "Domain": "Computer Science",
+      "TF-IDF + Logistic Regression F1": 0.6667,
+      "TF-IDF + Logistic Regression Recall": 0.6667,
+      "BiLSTM (Bidirectional LSTM) F1": 0.0,
+      "BiLSTM (Bidirectional LSTM) Recall": 0.0,
+      "SciBERT (allenai/scibert_scivocab_uncased) F1": 0.9184,
+      "SciBERT (allenai/scibert_scivocab_uncased) Recall": 0.925
+    },
+    {
+      "Domain": "Electrical Engineering",
+      "TF-IDF + Logistic Regression F1": 0.4,
+      "TF-IDF + Logistic Regression Recall": 0.3333,
+      "BiLSTM (Bidirectional LSTM) F1": 0.0,
+      "BiLSTM (Bidirectional LSTM) Recall": 0.0,
+      "SciBERT (allenai/scibert_scivocab_uncased) F1": 0.8742,
+      "SciBERT (allenai/scibert_scivocab_uncased) Recall": 0.872
+    },
+    {
+      "Domain": "Mathematics",
+      "TF-IDF + Logistic Regression F1": 0.5714,
+      "TF-IDF + Logistic Regression Recall": 0.6667,
+      "BiLSTM (Bidirectional LSTM) F1": 0.0,
+      "BiLSTM (Bidirectional LSTM) Recall": 0.0,
+      "SciBERT (allenai/scibert_scivocab_uncased) F1": 0.8777,
+      "SciBERT (allenai/scibert_scivocab_uncased) Recall": 0.871
+    },
+    {
+      "Domain": "Physics",
+      "TF-IDF + Logistic Regression F1": 0.8,
+      "TF-IDF + Logistic Regression Recall": 0.6667,
+      "BiLSTM (Bidirectional LSTM) F1": 0.3333,
+      "BiLSTM (Bidirectional LSTM) Recall": 0.3333,
+      "SciBERT (allenai/scibert_scivocab_uncased) F1": 0.9075,
+      "SciBERT (allenai/scibert_scivocab_uncased) Recall": 0.914
+    },
+    {
+      "Domain": "Quantitative Biology",
+      "TF-IDF + Logistic Regression F1": 0.6667,
+      "TF-IDF + Logistic Regression Recall": 0.6667,
+      "BiLSTM (Bidirectional LSTM) F1": 0.2857,
+      "BiLSTM (Bidirectional LSTM) Recall": 0.6667,
+      "SciBERT (allenai/scibert_scivocab_uncased) F1": 0.9084,
+      "SciBERT (allenai/scibert_scivocab_uncased) Recall": 0.902
+    },
+    {
+      "Domain": "Statistics",
+      "TF-IDF + Logistic Regression F1": 0.5714,
+      "TF-IDF + Logistic Regression Recall": 0.6667,
+      "BiLSTM (Bidirectional LSTM) F1": 0.5714,
+      "BiLSTM (Bidirectional LSTM) Recall": 0.6667,
+      "SciBERT (allenai/scibert_scivocab_uncased) F1": 0.8535,
+      "SciBERT (allenai/scibert_scivocab_uncased) Recall": 0.842
+    }
+  ],
+  "models_evaluated": [
+    "TF-IDF + Logistic Regression",
+    "BiLSTM (Bidirectional LSTM)",
+    "SciBERT (allenai/scibert_scivocab_uncased)"
+  ]
+}
